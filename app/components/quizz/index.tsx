@@ -32,72 +32,80 @@ const questions: Question[] = [
   },
 ];
 
+// Fonction pour générer un index aléatoire
+const getRandomIndex = (max: number) => Math.floor(Math.random() * max);
+
 // Composant Quizz
 export default function Quizz() {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState<string[]>([]);
-  const [score, setScore] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState(30); // Temps en secondes
+  const [currentQuestion, setCurrentQuestion] = useState<number | null>(null);
+  const [userAnswer, setUserAnswer] = useState<string | null>(null);
+  const [resultMessage, setResultMessage] = useState<string | null>(null);
+  const [timeRemaining, setTimeRemaining] = useState(30);
 
-  // Déclarez le timer en dehors du scope de l'effet pour qu'il soit accessible
-  let timer: NodeJS.Timeout;
+  useEffect(() => {
+    // Si c'est la première question, initialisez le timer
+    if (currentQuestion === null) {
+      const initialQuestion = getRandomIndex(questions.length);
+      setCurrentQuestion(initialQuestion);
 
-  // Spécifiez le type de la fonction handleAnswerClick
-  const handleAnswerClick = (selectedOption: string) => {
-    // Vérifiez si la réponse est correcte
-    if (selectedOption === questions[currentQuestion].correctAnswer) {
-      setScore(score + 1);
+      const timer = setInterval(() => {
+        // Mettez à jour le temps restant
+        setTimeRemaining((prevTime) => {
+          if (prevTime === 0) {
+            // Le temps est écoulé, affichez "Perdu"
+            clearInterval(timer);
+            setResultMessage("Perdu");
+            return prevTime;
+          } else {
+            return prevTime - 1;
+          }
+        });
+      }, 1000);
     }
+  }, [currentQuestion]);
 
-    // Passez à la question suivante
-    setCurrentQuestion(currentQuestion + 1);
+  const handleAnswerClick = (selectedOption: string) => {
+    setUserAnswer(selectedOption);
+
+    // Vérifiez si la réponse est correcte
+    const isCorrect = selectedOption === questions[currentQuestion!].correctAnswer;
+
+    // Affichez le message approprié
+    if (isCorrect) {
+      setResultMessage("Gagné!");
+    } else {
+      setResultMessage("Perdu");
+    }
   };
 
-  useEffect(() => {
-    timer = setInterval(() => {
-      // Mettez à jour le temps restant
-      setTimeRemaining((prevTime) => {
-        if (prevTime === 0) {
-          // Le temps est écoulé, terminez le quizz
-          clearInterval(timer);
-          alert(`Quizz terminé! Votre score est de ${score}/${questions.length}`);
-          return prevTime;
-        } else {
-          return prevTime - 1;
-        }
-      });
-    }, 1000);
-
-    // Nettoyez le timer lorsqu'on quitte le composant
-    return () => clearInterval(timer);
-  }, [currentQuestion, score]);
-
-  useEffect(() => {
-    // Vérifiez si toutes les questions ont été répondues
-    if (currentQuestion === questions.length) {
-      clearInterval(timer);
-      alert(`Quizz terminé! Votre score est de ${score}/${questions.length}`);
-    }
-  }, [currentQuestion, score]);
-
   return (
-    <div className={styles.quizzContainer}> {/* Utilisez le style du fichier CSS */}
+    <div className={styles.quizzContainer}>
       <h1 className={styles.title}>Quizz</h1>
-      <p>Temps restant : {timeRemaining} secondes</p>
-      {currentQuestion < questions.length ? (
+      {currentQuestion !== null && userAnswer === null && resultMessage === null ? (
         <div>
-          <p className={styles.numberQuestion}>Question {currentQuestion + 1} sur {questions.length}</p>
           <p className={styles.questions}>{questions[currentQuestion].text}</p>
           <ul className={styles.options}>
             {questions[currentQuestion].options.map((option, index) => (
-              <li className={styles.response} key={index} onClick={() => handleAnswerClick(option)}>
+              <li
+                className={styles.response}
+                key={index}
+                onClick={() => handleAnswerClick(option)}
+                style={{ cursor: userAnswer ? "not-allowed" : "pointer" }}
+              >
                 {option}
               </li>
             ))}
           </ul>
+          <p>Temps restant : {timeRemaining} secondes</p>
         </div>
       ) : (
-        <h1>Quizz terminé! Votre score est de {score}/{questions.length}</h1>
+        <div>
+          {resultMessage ? (
+            <p className={styles.resultMessage}>{resultMessage}</p>
+          ) : (
+            <p>Chargement...</p>
+          )}
+        </div>
       )}
     </div>
   );
