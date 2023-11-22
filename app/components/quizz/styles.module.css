@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .title {
@@ -67,12 +67,16 @@
   margin-top: 20px;
   font-size: 20px;
   font-weight: bold;
-  color: #27ae60;
+}
+
+.successMessage {
+  color: #27ae60; /* Couleur verte pour le message de réussite */
 }
 
 .errorMessage {
-  color: #e74c3c;
+  color: #e74c3c; 
 }
+
 
 .scoreMessage {
   margin-top: 10px;

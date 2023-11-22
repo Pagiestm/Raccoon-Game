@@ -300,8 +300,10 @@ export default function Quizz() {
         <div>
           {resultMessage ? (
             <>
-              <p className={styles.resultMessage}>{resultMessage}</p>
-              {resultMessage === "Gagné !" && (
+              <p className={`${styles.resultMessage} ${resultMessage === "Lost you can't move forward..." ? styles.errorMessage : styles.successMessage}`}>
+                {resultMessage}
+              </p>
+              {resultMessage === "Won !" && (
                 <p className={styles.scoreMessage}>You can move forward {score} spaces!</p>
               )}
             </>
