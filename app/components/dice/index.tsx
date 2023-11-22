@@ -29,9 +29,9 @@ const DicePage = () => {
           <div className={`${styles.face} ${styles.left}`}></div>
           <div className={`${styles.face} ${styles.top}`}></div>
           <div className={`${styles.face} ${styles.bottom}`}></div>
-          <p className={styles.diceText}>Taper sur le dé pour le lancer</p>
         </div>
       </section>
+      <h1 className={styles.diceText}>Click the dice to roll</h1>
     </div>
   );
 };

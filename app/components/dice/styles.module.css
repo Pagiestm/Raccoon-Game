@@ -8,10 +8,15 @@
     perspective: 1000px;
     perspective-origin: 50% 100%;
   }
-
+  
   .diceText {
+    position: absolute;
+    bottom: 250px; /* ajustez la valeur selon votre besoin */
+    text-align: center;
+    width: 100%;
     color: #000;
   }
+  
   
   .cube {
     width: 100%;
@@ -44,26 +49,36 @@
   
   .back {
     transform: rotateX(-180deg) translateZ(100px);
-    background: red;
+    background: #EB5858;
+    background-image: url('../../../public/raccoonPrinter.png');
+    background-size: cover;
   }
   
   .right {
     transform: rotateY(90deg) translateZ(100px);
-    background: green;
+    background: #ACBF35;
+    background-image: url('../../../public/raccoonQuestion.png');
+    background-size: cover;
   }
   
   .left {
     transform: rotateY(-90deg) translateZ(100px);
-    background: purple;
+    background: #6969C2;
+    background-image: url('../../../public/raccoonCool.png');
+    background-size: cover;
   }
   
   .top {
     transform: rotateX(90deg) translateZ(100px);
     background: black;
+    background-image: url('../../../public/raccoonLearn.png');
+    background-size: cover;
   }
   
   .bottom {
     transform: rotateX(-90deg) translateZ(100px);
-    background: yellow;
+    background: #FFB800;
+    background-image: url('../../../public/raccoonPhone.png');
+    background-size: cover;
   }
   
