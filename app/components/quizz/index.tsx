@@ -8,6 +8,7 @@ interface Question {
   text: string;
   options: string[];
   correctAnswer: string;
+  difficulty: 'facile' | 'moyen' | 'difficile'; // Ajout de la difficulté
 }
 
 // Définissez les questions et leurs réponses
@@ -17,18 +18,21 @@ const questions: Question[] = [
     text: "Quelle est la capitale de la France ?",
     options: ["Paris", "Berlin", "Londres", "Madrid"],
     correctAnswer: "Paris",
+    difficulty: 'facile',
   },
   {
     id: 2,
     text: "Quel est le plus grand océan du monde ?",
     options: ["Atlantique", "Indien", "Arctique", "Pacifique"],
     correctAnswer: "Pacifique",
+    difficulty: 'moyen',
   },
   {
     id: 3,
     text: "Quelle est la couleur du ciel par temps clair ?",
     options: ["Bleu", "Rouge", "Vert", "Jaune"],
     correctAnswer: "Bleu",
+    difficulty: 'difficile',
   },
 ];
 
@@ -41,6 +45,7 @@ export default function Quizz() {
   const [userAnswer, setUserAnswer] = useState<string | null>(null);
   const [resultMessage, setResultMessage] = useState<string | null>(null);
   const [timeRemaining, setTimeRemaining] = useState(30);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     // Si c'est la première question, initialisez le timer
@@ -54,7 +59,7 @@ export default function Quizz() {
           if (prevTime === 0) {
             // Le temps est écoulé, affichez "Perdu"
             clearInterval(timer);
-            setResultMessage("Perdu");
+            setResultMessage("Perdu vous ne pouvez pas avancer...");
             return prevTime;
           } else {
             return prevTime - 1;
@@ -72,9 +77,24 @@ export default function Quizz() {
 
     // Affichez le message approprié
     if (isCorrect) {
-      setResultMessage("Gagné!");
+      // Ajoutez les points en fonction de la difficulté
+      switch (questions[currentQuestion!].difficulty) {
+        case 'facile':
+          setScore(score + 3);
+          break;
+        case 'moyen':
+          setScore(score + 5);
+          break;
+        case 'difficile':
+          setScore(score + 6);
+          break;
+        default:
+          break;
+      }
+
+      setResultMessage("Gagné !");
     } else {
-      setResultMessage("Perdu");
+      setResultMessage("Perdu vous ne pouvez pas avancer...");
     }
   };
 
@@ -83,6 +103,7 @@ export default function Quizz() {
       <h1 className={styles.title}>Quizz</h1>
       {currentQuestion !== null && userAnswer === null && resultMessage === null ? (
         <div>
+          <p className={styles.difficulty}>{questions[currentQuestion].difficulty}</p>
           <p className={styles.questions}>{questions[currentQuestion].text}</p>
           <ul className={styles.options}>
             {questions[currentQuestion].options.map((option, index) => (
@@ -101,7 +122,12 @@ export default function Quizz() {
       ) : (
         <div>
           {resultMessage ? (
-            <p className={styles.resultMessage}>{resultMessage}</p>
+            <>
+              <p className={styles.resultMessage}>{resultMessage}</p>
+              {resultMessage === "Gagné !" && (
+                <p className={styles.scoreMessage}>Vous pouvez avancer de {score} cases !</p>
+              )}
+            </>
           ) : (
             <p>Chargement...</p>
           )}
