@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,18 +14,27 @@ body {
     --primaryColor: black;
     --secondaryColor: #fe9102;
     --buttonColor: #676767;
-    --textNormal: white;
-    --textTitle: white;
+    --textTitle: #e55801;
     --navBar: #2d3748;
     --navLinks: #9aa1a9;
  }
 
- body::-webkit-scrollbar {
-    width: 10px; /* width of the entire scrollbar */
-  }
+body::-webkit-scrollbar {
+    width: 10px;
+}
 
   
-  body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background-color: var(--secondaryColor); 
-  }
+    background-color: var(--secondaryColor);
+}
+
+h1, h2, h3{
+  font-family: "Faster One", sans-serif;
+  color: var(--textTitle);
+}
+
+p {
+font-size: 20px;
+}
+
