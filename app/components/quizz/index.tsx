@@ -1,6 +1,8 @@
 // Importez les modules nécessaires
 import { useState, useEffect } from "react";
 import styles from './styles.module.css'; // Importez le fichier CSS
+import Image from "next/image";
+import Logo from "app/assets/img/logo.png";
 
 // Interface pour définir le type de la question
 interface Question {
@@ -8,7 +10,7 @@ interface Question {
   text: string;
   options: string[];
   correctAnswer: string;
-  difficulty: 'facile' | 'moyen' | 'difficile'; // Ajout de la difficulté
+  difficulty: 'Facile' | 'Moyen' | 'Difficile'; // Ajout de la difficulté
 }
 
 // Définissez les questions et leurs réponses
@@ -18,21 +20,21 @@ const questions: Question[] = [
     text: "Quelle est la capitale de la France ?",
     options: ["Paris", "Berlin", "Londres", "Madrid"],
     correctAnswer: "Paris",
-    difficulty: 'facile',
+    difficulty: 'Facile',
   },
   {
     id: 2,
     text: "Quel est le plus grand océan du monde ?",
     options: ["Atlantique", "Indien", "Arctique", "Pacifique"],
     correctAnswer: "Pacifique",
-    difficulty: 'moyen',
+    difficulty: 'Moyen',
   },
   {
     id: 3,
     text: "Quelle est la couleur du ciel par temps clair ?",
     options: ["Bleu", "Rouge", "Vert", "Jaune"],
     correctAnswer: "Bleu",
-    difficulty: 'difficile',
+    difficulty: 'Difficile',
   },
 ];
 
@@ -79,14 +81,14 @@ export default function Quizz() {
     if (isCorrect) {
       // Ajoutez les points en fonction de la difficulté
       switch (questions[currentQuestion!].difficulty) {
-        case 'facile':
+        case 'Facile':
+          setScore(score + 1);
+          break;
+        case 'Moyen':
+          setScore(score + 2);
+          break;
+        case 'Difficile':
           setScore(score + 3);
-          break;
-        case 'moyen':
-          setScore(score + 5);
-          break;
-        case 'difficile':
-          setScore(score + 6);
           break;
         default:
           break;
@@ -101,9 +103,10 @@ export default function Quizz() {
   return (
     <div className={styles.quizzContainer}>
       <h1 className={styles.title}>Quizz</h1>
+      <Image src={Logo} alt="Logo" className={styles.logo} />
       {currentQuestion !== null && userAnswer === null && resultMessage === null ? (
         <div>
-          <p className={styles.difficulty}>{questions[currentQuestion].difficulty}</p>
+          <p className={styles.difficulty}>Difficulté : {questions[currentQuestion].difficulty}</p>
           <p className={styles.questions}>{questions[currentQuestion].text}</p>
           <ul className={styles.options}>
             {questions[currentQuestion].options.map((option, index) => (

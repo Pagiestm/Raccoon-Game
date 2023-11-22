@@ -1,37 +1,87 @@
-/* quizzStyles.module.css */
-
 .quizzContainer {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.difficulty {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.questions {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.options {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.response {
+  margin: 10px;
+  width: 200px; /* Définir une largeur fixe pour tous les boutons */
+  padding: 15px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  /* Effet 3D */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.response:hover {
+  background-color: #e55801;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.resultMessage {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.errorMessage {
+  color: #e74c3c;
+}
+
+.scoreMessage {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+@media screen and (max-width: 600px) {
+  .quizzContainer {
+    max-width: 100%;
   }
-  
-  .title {
-    color: #333;
-  }
-  
-  .questions {
-    margin-bottom: 10px;
-  }
-  
-  .options {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .response {
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #f4f4f4;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  
-  .response:hover {
-    background-color: #ddd;
-  }
-  
+}
