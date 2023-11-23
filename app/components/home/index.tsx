@@ -30,7 +30,7 @@ export default function Home() {
                         wins and free Spiki the raccoon.
                     </p>
                     <div className="flex flex-col md:flex-row justify-around py-5 md:py-10">
-                        <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-56 md:h-64 rounded-2xl items-center border-2 md:border-none mb-4 md:mb-0">
+                        <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-[350px] md:h-64 rounded-2xl items-center border-2 md:border-none mb-4 md:mb-0">
                             <h2 className="text-white text-3xl md:text-4xl text-center px-5 md:px-10">What’s in the box ?</h2>
                             <div className="flex flex-col text-white pt-2 md:pt-5">
                                 <div className="flex items-center">
