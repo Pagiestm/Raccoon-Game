@@ -13,15 +13,15 @@ export default function Home() {
                     <a href="/dice" className="text-dark hover:text-primary hover-bg-secondary p-2 rounded">Dice</a>
                 </div>
             </nav>
-            <div className="p-4 md:p-8 lg:p-16">
-                <div className="flex flex-col items-center py-5 md:py-10">
-                    <img className="w-32 md:w-64" src="./logo.png" alt="Logo" />
-                    <h1 className="text-3xl md:text-6xl text-center">
+            <div className="p-2 md:p-8">
+                <div className="flex flex-col md:flex-row items-center justify-center py-3">
+                    <img className="w-32 md:w-64 mb-4 md:mb-0" src="./logo.png" alt="Logo" />
+                    <h1 className="text-3xl md:text-6xl text-center md:ml-20">
                         THE RACCOON <br /> GAME
                     </h1>
                 </div>
                 <section>
-                    <h2 className="text-3xl text-center md:text-left mb-4"> The game :</h2>
+                    <h2 className="text-3xl text-center md:text-left mb-4 mt-4"> The game :</h2>
                     <p className="text-sm md:text-base">The purpose of the game is to help Spiki the raccoon to escape from the fox jail.
                         For that you will have to roll the dice and get the card from the color you have obtained. After that
                         you will have to respond to the question or mission written on the card. If you succeed, you move
