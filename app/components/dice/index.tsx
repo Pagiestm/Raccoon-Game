@@ -32,7 +32,7 @@ const DicePage = () => {
           onClick={rollDice}
         >
           <div className={`${styles.face} ${styles.front}`}></div>
-          <div className={`${styles.face} ${styles.back}`}></div>
+          <div className={`${styles.face} ${styles.back}`}>Move forward 3 spaces</div>
           <div className={`${styles.face} ${styles.right}`}></div>
           <div className={`${styles.face} ${styles.left}`}></div>
           <div className={`${styles.face} ${styles.top}`}></div>
