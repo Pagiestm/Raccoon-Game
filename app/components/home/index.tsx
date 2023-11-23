@@ -21,7 +21,7 @@ export default function Home() {
                     </h1>
                 </div>
                 <section>
-                    <h1 className="text-4xl text-center md:text-left"> The game :</h1>
+                    <h2 className="text-3xl text-center md:text-left mb-4"> The game :</h2>
                     <p className="text-sm md:text-base">The purpose of the game is to help Spiki the raccoon to escape from the fox jail.
                         For that you will have to roll the dice and get the card from the color you have obtained. After that
                         you will have to respond to the question or mission written on the card. If you succeed, you move
@@ -30,25 +30,13 @@ export default function Home() {
                         wins and free Spiki the raccoon.
                     </p>
                     <div className="flex flex-col md:flex-row justify-around py-5 md:py-10">
-                        <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-auto md:h-64 rounded-2xl items-center border-2 md:border-none mb-4 md:mb-0">
+                        <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-56 md:h-64 rounded-2xl items-center border-2 md:border-none mb-4 md:mb-0">
                             <h2 className="text-white text-3xl md:text-4xl text-center px-5 md:px-10">What’s in the box ?</h2>
                             <div className="flex flex-col text-white pt-2 md:pt-5">
-                                <div className="flex items-center">
-                                    <img className="w-16 md:w-8 ml-2" src="./board.png" alt="board" />
-                                    <p className="text-sm md:text-base ml-2">Board</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <p className="text-sm md:text-base ml-2">6 raccoon pawns</p>
-                                    <img className="w-16 md:w-8 ml-2" src="./raccoon.png" alt="raccoon" />
-                                </div>
-                                <div className="flex items-center">
-                                    <img className="w-16 md:w-8 ml-2" src="./cartes.png" alt="cartes" />
-                                    <p className="text-sm md:text-base ml-2">70 cards</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <p className="text-sm md:text-base ml-2">A 6 faces dice</p>
-                                    <img className="w-16 md:w-8 ml-2" src="./2dé.png" alt="2dé" />
-                                </div>
+                                <p className="text-sm md:text-base">Board</p>
+                                <p className="text-sm md:text-base">70 cards</p>
+                                <p className="text-sm md:text-base">6 raccoon pawns</p>
+                                <p className="text-sm md:text-base">A 6 faces dice</p>
                             </div>
                         </div>
                         <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-56 md:h-64 rounded-2xl items-center border-2 md:border-none">
@@ -60,7 +48,7 @@ export default function Home() {
                     </div>
                 </section>
                 <section id="sectionCards">
-                    <h1 className="text-4xl text-center md:text-left">The Cards :</h1>
+                    <h2 className="text-3xl text-center md:text-left">The Cards :</h2>
                     <div className="flex overflow-x-auto">
                         <div className="flex flex-col items-center p-2 md:p-4">
                             <img className="w-40 md:w-80" src="./card1.png" alt="card1" />
@@ -84,25 +72,27 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <section id="sectionRules">
-                    <h1 className="text-4xl text-center md:text-left">THE RULES :</h1>
+                <section id="sectionRules" className="mt-6">
+                    <h2 className="text-3xl text-center md:text-left">THE RULES :</h2>
                     <div className="flex flex-col md:flex-row items-center bg-peach w-full p-2 md:p-4">
                         <div className="flex-1 mb-2 md:mb-0 md:mr-4">
-                            <div className="flex flex-col items-center bg-amber-600 text-white p-2 md:p-4 m-1 text-center border-2 rounded-md">
+                            <div className="flex flex-col items-center bg-amber-600 text-white p-1 md:p-2 m-1 text-center border-2 rounded-md">
                                 <span className="text-lg text-sm md:text-lg">15+</span>
                                 <img src="./peoples.png" alt="Icon" className="w-6 h-6 md:w-8 md:h-8" />
                             </div>
-                            <div className="flex flex-col items-center bg-amber-600 text-white p-2 md:p-4 m-1 text-center border-2 rounded-md">
+                            <div className="flex flex-col items-center bg-amber-600 text-white p-1 md:p-2 m-1 text-center border-2 rounded-md">
                                 <span className="text-lg text-sm md:text-lg">30-45<br />minutes</span>
                                 <img src="./clock.png" alt="Icon" className="w-6 h-6 md:w-8 md:h-8" />
                             </div>
-                            <div className="flex flex-col items-center bg-amber-600 text-white p-2 md:p-4 m-1 text-center border-2 rounded-md">
-                                <span className="text-lg text-sm md:text-lg">2-6<br />player's</span>
+                            <div className="flex flex-col items-center bg-amber-600 text-white p-1 md:p-2 m-1 text-center border-2 rounded-md">
+                                <span className="text-lg text-sm md:text-lg">2-6<br />joueurs</span>
                                 <img src="./clock.png" alt="Icon" className="w-6 h-6 md:w-8 md:h-8" />
                             </div>
                         </div>
                         <div className="flex-1 ml-2 md:ml-4">
-                            <p className="pt-5 md:pt-10 text-sm md:text-base">Hello, agent raccoon 001, we need you! In fact, you are here today to help Spiki the raccoon to escape from the fox jail. You are allowed to do this mission only if you are 15 years old or more because it is classified as very dangerous. If you are good, this rescue going to last between 30 and 45 minutes. Only one you will be able to save Spiki, but you can be between 2 and 6 to participate.</p>
+                            <p className="pt-5 md:pt-10 text-sm md:text-base">
+                                Hello, agent raccoon 001, we need you! In fact, you are here today to help Spiki the raccoon to escape from the fox jail. You are allowed to do this mission only if you are 15 years old or more because it is classified as very dangerous. If you are good, this rescue is going to last between 30 and 45 minutes. Only one you will be able to save Spiki, but you can be between 2 and 6 to participate.
+                            </p>
                         </div>
                     </div>
 
@@ -117,37 +107,59 @@ export default function Home() {
                     </p>
 
                     <div className="flex justify-around py-5 md:py-10">
-                        <img className="w-8 md:w-12 lg:w-16" src="./pattes.png" />
-                        <img className="w-8 md:w-12 lg:w-16" src="./pattes.png" />
-                        <img className="w-8 md:w-12 lg:w-16" src="./pattes.png" />
-                        <img className="w-8 md:w-12 lg:w-16" src="./pattes.png" />
-                        <img className="w-8 md:w-12 lg:w-16" src="./pattes.png" />
-                        <img className="w-8 md:w-12 lg:w-16" src="./pattes.png" />
-                        <img className="w-8 md:w-12 lg:w-16" src="./pattes.png" />
-                        <img className="w-8 md:w-12 lg:w-16" src="./pattes.png" />
+                        {[...Array(8)].map((_, index) => (
+                            <img key={index} className="w-8 md:w-12 lg:w-16" src="./pattes.png" alt={`pattes-${index}`} />
+                        ))}
                     </div>
 
-                    <p className="pt-5 md:pt-10 text-sm md:text-base">
+                    <p className="pt-5 md:pt-5 text-sm md:text-base">
                         The foxes will try to complicate the task during your rescue, so when you arrived at a fox box, you
                         must get back to the last box you were (if you won 3 cases and you arrived at the fox case you
                         step back 3 cases before).
                     </p>
-                    <p className="pt-5 md:pt-10 text-sm md:text-base">
+                    <p className="pt-5 md:pt-5 text-sm md:text-base">
                         Fortunately for you, some of our raccoons’ friends have installed ladders that will maybe help you
                         during your mission. If you succeed in a case where there is a ladder, you can climb it and go to
                         the box at the top of the ladder. On the contrary, if you wail on a ladder box, you must get down to
                         the box at the bottom of it and lose your place.
                     </p>
-                    <p className="pt-5 md:pt-10 text-sm md:text-base">
+                    <p className="pt-5 md:pt-5 text-sm md:text-base">
                         If you don’t have a phone during the game, you have to cancell the black card «general culture».
                         If you take a black card with the raccoon and a book, you can move foreward of 3 boxes.
                     </p>
-                    <p className="pt-5 md:pt-10 text-sm md:text-base">
+                    <p className="pt-5 md:pt-5 text-sm md:text-base">
                         Agent raccoon, you only succeed in you mission when you arrive at the last case, or after.
                     </p>
 
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center mt-6">
                         <img src="./logo.png" className="w-52" />
+                    </div>
+
+                    <div className="flex justify-center items-center mt-6">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            className="mt-2 w-6 h-6 text-secondary-dark animate-bounce"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                            />
+                        </svg>
+                    </div>
+
+                    <div className="flex flex-col items-center mt-6">
+                        <a
+                            href="./RaccoonGame.pdf"
+                            download="RaccoonGame.pdf"
+                            className="bg-black text-white hover:text-white hover:bg-orange-500 p-2 rounded inline-block"
+                        >
+                            Download the Game
+                        </a>
                     </div>
                 </section>
             </div>
