@@ -11,10 +11,16 @@
   
   .diceText {
     position: absolute;
-    bottom: 250px; /* ajustez la valeur selon votre besoin */
+    bottom: 200px; /* ajustez la valeur selon votre besoin */
     text-align: center;
     width: 100%;
     color: #000;
+  }
+
+  @media screen and (max-width: 767px) {
+    .diceText {
+      bottom: 100px; /* Adjust the value according to your needs */
+    }
   }
   
   
@@ -44,14 +50,14 @@
   
   .front {
     transform: translateZ(100px);
-    background: blue;
+    background: #EB5858;
+    background-image: url('../../../public/raccoonPrinter.png');
+    background-size: cover;
   }
   
   .back {
     transform: rotateX(-180deg) translateZ(100px);
-    background: #EB5858;
-    background-image: url('../../../public/raccoonPrinter.png');
-    background-size: cover;
+    background: beige;
   }
   
   .right {

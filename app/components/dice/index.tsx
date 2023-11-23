@@ -14,6 +14,14 @@ const DicePage = () => {
 
   return (
     <div>
+      <nav className="flex justify-between items-center bg-white p-4 shadow-md">
+        <div className="logo">
+          <img src="./logo.png" alt="Logo" className="h-10"></img>
+        </div>
+        <div className="links flex gap-6">
+          <a href="/" className="text-dark hover:text-primary hover-bg-secondary p-2 rounded">Home</a>
+        </div>
+      </nav>
       <section className={styles.container}>
         <div
           id="cube"
