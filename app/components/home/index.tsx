@@ -30,25 +30,13 @@ export default function Home() {
                         wins and free Spiki the raccoon.
                     </p>
                     <div className="flex flex-col md:flex-row justify-around py-5 md:py-10">
-                        <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-auto md:h-64 rounded-2xl items-center border-2 md:border-none mb-4 md:mb-0">
+                        <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-56 md:h-64 rounded-2xl items-center border-2 md:border-none mb-4 md:mb-0">
                             <h2 className="text-white text-3xl md:text-4xl text-center px-5 md:px-10">What’s in the box ?</h2>
                             <div className="flex flex-col text-white pt-2 md:pt-5">
-                                <div className="flex items-center">
-                                    <img className="w-16 md:w-8 ml-2" src="./board.png" alt="board" />
-                                    <p className="text-sm md:text-base ml-2">Board</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <p className="text-sm md:text-base ml-2">6 raccoon pawns</p>
-                                    <img className="w-16 md:w-8 ml-2" src="./raccoon.png" alt="raccoon" />
-                                </div>
-                                <div className="flex items-center">
-                                    <img className="w-16 md:w-8 ml-2" src="./cartes.png" alt="cartes" />
-                                    <p className="text-sm md:text-base ml-2">70 cards</p>
-                                </div>
-                                <div className="flex items-center">
-                                    <p className="text-sm md:text-base ml-2">A 6 faces dice</p>
-                                    <img className="w-16 md:w-8 ml-2" src="./2dé.png" alt="2dé" />
-                                </div>
+                                <p className="text-sm md:text-base">Board</p>
+                                <p className="text-sm md:text-base">70 cards</p>
+                                <p className="text-sm md:text-base">6 raccoon pawns</p>
+                                <p className="text-sm md:text-base">A 6 faces dice</p>
                             </div>
                         </div>
                         <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-56 md:h-64 rounded-2xl items-center border-2 md:border-none">
@@ -97,7 +85,7 @@ export default function Home() {
                                 <img src="./clock.png" alt="Icon" className="w-6 h-6 md:w-8 md:h-8" />
                             </div>
                             <div className="flex flex-col items-center bg-amber-600 text-white p-2 md:p-4 m-1 text-center border-2 rounded-md">
-                                <span className="text-lg text-sm md:text-lg">2-6<br />player's</span>
+                                <span className="text-lg text-sm md:text-lg">2-6<br />joueurs</span>
                                 <img src="./clock.png" alt="Icon" className="w-6 h-6 md:w-8 md:h-8" />
                             </div>
                         </div>
