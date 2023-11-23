@@ -33,10 +33,22 @@ export default function Home() {
                         <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-56 md:h-64 rounded-2xl items-center border-2 md:border-none mb-4 md:mb-0">
                             <h2 className="text-white text-3xl md:text-4xl text-center px-5 md:px-10">What’s in the box ?</h2>
                             <div className="flex flex-col text-white pt-2 md:pt-5">
-                                <p className="text-sm md:text-base">Board</p>
-                                <p className="text-sm md:text-base">70 cards</p>
-                                <p className="text-sm md:text-base">6 raccoon pawns</p>
-                                <p className="text-sm md:text-base">A 6 faces dice</p>
+                                <div className="flex items-center">
+                                    <img className="w-16 md:w-8 ml-2" src="./board.png" alt="board" />
+                                    <p className="text-sm md:text-base ml-2">Board</p>
+                                </div>
+                                <div className="flex items-center">
+                                    <p className="text-sm md:text-base ml-2">6 raccoon pawns</p>
+                                    <img className="w-16 md:w-8 ml-2" src="./raccoon.png" alt="raccoon" />
+                                </div>
+                                <div className="flex items-center">
+                                    <img className="w-16 md:w-8 ml-2" src="./cartes.png" alt="cartes" />
+                                    <p className="text-sm md:text-base ml-2">70 cards</p>
+                                </div>
+                                <div className="flex items-center">
+                                    <p className="text-sm md:text-base ml-2">A 6 faces dice</p>
+                                    <img className="w-16 md:w-8 ml-2" src="./2dé.png" alt="2dé" />
+                                </div>
                             </div>
                         </div>
                         <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-56 md:h-64 rounded-2xl items-center border-2 md:border-none">
