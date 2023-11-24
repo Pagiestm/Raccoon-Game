@@ -87,8 +87,8 @@ export default function Home() {
                 <section id="sectionRules" className="mt-6">
                     <h2 className="text-3xl text-center md:text-left">THE RULES :</h2>
                     <div className="flex flex-col md:flex-row items-center bg-peach w-full p-2 md:p-4">
-                        <div className="flex-1 mb-2 md:mb-0 md:mr-4">
-                            <div className="flex flex-col items-center bg-amber-600 text-white p-1 md:p-2 m-1 text-center border-2 rounded-md">
+                        <div className="sm:flex sm:justify-around flex-1 mb-2 md:mb-0 md:mr-4">
+                            <div className="flex flex-col items-center bg-amber-600 text-white p-1 md:p-2 m-1 text-center border-2 rounded-md sm:px-5">
                                 <span className="text-lg text-sm md:text-lg">15+</span>
                                 <img src="./peoples.png" alt="Icon" className="w-6 h-6 md:w-8 md:h-8" />
                             </div>
