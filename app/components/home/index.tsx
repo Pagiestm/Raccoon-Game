@@ -54,7 +54,11 @@ export default function Home() {
                         <div className="card flex flex-col bg-amber-600 w-full md:w-1/2 lg:w-1/3 h-56 md:h-64 rounded-2xl items-center border-2 md:border-none">
                             <h2 className="text-white text-3xl md:text-4xl text-center px-5 md:px-10">What do you need to play ?</h2>
                             <p className="text-xs md:text-base text-white md:pt-5 px-5 md:px-10">
-                                The setup : Install the board. Each player has to choose his pawn. Put every pawn in the dep line. Prepare the cards, in 5 different stacks (separating the cards by color).
+                                The setup : Install the board. Each
+                                player has to choose his pawn. Put
+                                every pawn in the dep line.
+                                Prepare the cards, in 5 different stacks
+                                (separating the cards by color)
                             </p>
                         </div>
                     </div>
@@ -103,7 +107,15 @@ export default function Home() {
                         </div>
                         <div className="flex-1 ml-2 md:ml-4">
                             <p className="pt-5 md:pt-10 text-sm md:text-base">
-                                Hello, agent raccoon 001, we need you! In fact, you are here today to help Spiki the raccoon to escape from the fox jail. You are allowed to do this mission only if you are 15 years old or more because it is classified as very dangerous. If you are good, this rescue is going to last between 30 and 45 minutes. Only one you will be able to save Spiki, but you can be between 2 and 6 to participate.
+                                Hello, agent raccoon 001, we need you !
+                                In fact, you are here today to help Spiki the raccoon
+                                to escape from the fox jail.
+                                You are allowed to do this mission only if you are
+                                15 years old or more because it is classified as very
+                                dangerous. If you are good, this rescue going to last
+                                between 30 and 45 minutes. Only one you will be
+                                able to save Spiki, but you can be between 2 and 6 to
+                                participate.
                             </p>
                         </div>
                     </div>
@@ -111,11 +123,13 @@ export default function Home() {
                     <p className="pt-5 md:pt-10 text-sm md:text-base">The younger agent starts. After that each raccoon roll the color dice and answer to the fox question
                         written on the card corresponding to the color of their dice.
                         If you have the white face of the dice, you’re lucky, you can move foreword by 3 boxes. When you
-                        get you card, you must answer to the fox question or task, if you succeed, you move foreword from
-                        de boxes indicated at the top of your card, if you failed you step back from de boxes indicated at
-                        the top of your card. Be careful agents, you only have 30 seconds to complete the mission of the
-                        drawn card. If you failed the mission of the card and you are still on the case start, you can’t move
-                        back.
+                        get you card, you must answer to the fox question or task, if you succeed, you move foreword
+                        from de boxes indicated at the top of your card, if you failed you step back from de boxes indicated
+                        at the top of your card. If you roll the dice and you get the same color as on the box as the box
+                        you are on, then you can already move foreward one box and after draw your color card ( if the
+                        box where you arrive is a ladder or a fox it has no impact). Be careful agents, you only have 30
+                        seconds to complete the mission of the drawn card. If you failed the mission of the card and you
+                        are still on the case start, you can’t move back.
                     </p>
 
                     <div className="flex justify-around py-5 md:py-10">
